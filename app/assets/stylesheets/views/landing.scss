@@ -23,6 +23,7 @@
   font-size: 100px;
   color: #FFC300;
   font-family: fantasy;
+  text-shadow: 8px 8px 8px #000000;
 
 }
 
@@ -34,4 +35,58 @@
   font-size: 50px;
   color: gold;
   font-family: fantasy;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.features-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 30px;
+  background-color: black;
+}
+
+.features {
+  margin: 20px;
+  flex: 0 0 200px;
+  font-size: 30px;
+  font-family: fantasy;
+  color: white;
+}
+
+.photo-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 30px;
+}
+
+.photo {
+  margin: 20px;
+  flex: 0 0 200px;
+  font-size: 30px;
+  font-family: fantasy;
+  color: black;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 30px;
+  background-color: white;
+}
+
+.app {
+  margin: 20px;
+  flex: 0 0 200px;
+  font-size: 30px;
+  font-family: fantasy;
+  color: black;
 }
