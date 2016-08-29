@@ -1,0 +1,37 @@
+.background {
+   background-image: asset-url("club.jpg");
+   height: calc(100vh - 52px);
+   width: 100%;
+   background-position: 50% 50%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+ }
+
+ .title-container {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 1200px;
+   justify-content: center;
+   margin: auto;
+ }
+
+.title {
+  font-size: 100px;
+  color: #FFC300;
+  font-family: fantasy;
+
+}
+
+.short-underline {
+  width: auto;
+}
+
+.subtitle {
+  font-size: 50px;
+  color: gold;
+  font-family: fantasy;
+}
