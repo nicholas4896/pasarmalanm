@@ -1,0 +1,30 @@
+.header{
+
+  #header {
+  height: 52px;
+  z-index: 1;
+}
+
+.navbar-header {
+  font-size: 24px;
+  color: #FFC300;
+}
+
+.navbar {
+  height: 52px;
+  margin-bottom: 0;
+  background-color: maroon;
+  border-color: maroon;
+  font-size: 28px;
+  font-family: fantasy;
+}
+
+.navbar-collapse {
+  color: white;
+}
+
+a, a:visited{
+  color: #FFC300;
+  font-size: 24px;
+  }
+}
