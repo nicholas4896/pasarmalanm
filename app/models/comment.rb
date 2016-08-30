@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   # mount_uploader :image, ImageUploader
 
-  # validates :body, length: { minimum: 5 }, presence: true
+  validates :body, length: { minimum: 5 }, presence: true
 
   # paginates_per 3
 
