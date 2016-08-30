@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   # mount_uploader :image, ImageUploader
 
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   #
-  # validates :email, presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}
-  # validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}
+  validates :username, presence: true, uniqueness: true
 
   # extend FriendlyId
   # friendly_id :username, use: [:slugged, :history]
