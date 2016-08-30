@@ -26,11 +26,16 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'friendly_id', github: 'norman/friendly_id'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+gem 'cancancan'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

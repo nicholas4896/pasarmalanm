@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :title, length: { minimum: 5 }, presence: true
   validates :description, length: { minimum: 5 }, presence: true
 
-  # mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   # extend FriendlyId
   # friendly_id :title, use: [:slugged, :history]
