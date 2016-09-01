@@ -1,12 +1,7 @@
 class TicketsController < ApplicationController
 
   def index
-    @tickets = Ticket.all
-    if params[:search]
-      @tickets = Ticket.search(params[:search])
-    else
-      @tickets = Ticket.all
-    end
+    @item = Item.order(id: :DESC)
+    @tickets = Item.all
   end
-
 end
