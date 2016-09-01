@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'omniauth'
 gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -31,6 +31,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'cancancan'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'figaro'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
