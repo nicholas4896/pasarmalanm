@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="header-dropdown">
         <ul class="nav navbar-nav navbar-right">
           <%= link_to "About", about_path %>
-          <%= link_to "Tickets", tickets_path %>
+          <%= link_to "Tickets", items_path %>
           <%= link_to "Cart" %>
 
           <% if current_user %>
@@ -30,7 +30,7 @@
 
 
           </ul>
-          <%= form_tag tickets_path, :method => 'get', id: "search-form" do %>
+          <%= form_tag items_path, :method => 'get', id: "search-form" do %>
           <%= text_field_tag :search, params[:search_string], placeholder: "Tickets" %>
           <%= submit_tag "Search", :name => nil %>
           <% end %>
