@@ -12,6 +12,9 @@
              <%= image_tag ticket.image, class: "ticket-image"%>
              <hr>
              <%= ticket.body %>
+             <%= ticket.price %>
+             <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), method: :post, remote: true %>
+             <%= link_to 'Show', item_path(ticket) %>
          </div>
        <% end %>
       </section>

@@ -1,0 +1,36 @@
+<h1> Your Cart </h1>
+
+<% if @items.empty? %>
+  Your Cart Is Currently empty
+<% else %>
+<% end %>
+
+<% total = 0 %>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item.title, items_path %>
+      <br>
+      <%= item.price %>
+      <br>
+      <%= form_tag update_item_path(id: item.id), method: :patch do %>
+
+      <div class = "">
+      <%= label_tag "Quantity:", nil, class: "" %>
+      <%= text_field_tag :quantity, item.quantity %>
+      <%= submit_tag 'Update', class: "button" %>
+      <% end %>
+      <br>
+      <%= link_to "Remove", remove_item_path(id: item), method: :delete %>
+      <br>
+    </li>
+  <% end %>
+
+  <% if @items.empty? %>
+  <% else %>
+    <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
+  <% end %>
+
+  <a href="#" class="button"> Place Order </a>
+</ul>
