@@ -4,11 +4,17 @@ class CartsController < ApplicationController
 
   def show
     @items = []
+    @total_price = 0.0
+
     @cart.each do |k,v|
-      item = Item.find_by(id: k)
-      item.define_singleton_method(:quantity) do
-        v
-      end
+      item = Item.friendly.find(k)
+
+      item_total = 0
+      item_total = item.price * v.to_f
+      @total_price += item_total
+
+      item.define_singleton_method(:quantity) { v }
+      item.define_singleton_method(:total) { item_total }
       @items << item
     end
   end

@@ -12,14 +12,14 @@
     <li>
       <%= link_to item.title, items_path %>
       <br>
-      <%= item.price %>
+      <%= number_to_currency(item.price, :unit => 'RM') %>
       <br>
-      <%= form_tag update_item_path(id: item.id), method: :patch do %>
 
-      <div class = "">
-      <%= label_tag "Quantity:", nil, class: "" %>
-      <%= text_field_tag :quantity, item.quantity %>
-      <%= submit_tag 'Update', class: "button" %>
+      <%= form_tag update_item_path(id: item), method: :patch do %>
+        <div class = "">
+        <%= label_tag "Quantity:", nil, class: "" %>
+        <%= text_field_tag :quantity, item.quantity %>
+        <%= submit_tag 'Update', class: "button" %>
       <% end %>
       <br>
       <%= link_to "Remove", remove_item_path(id: item), method: :delete %>
@@ -33,4 +33,6 @@
   <% end %>
 
   <a href="#" class="button"> Place Order </a>
+  <br>
+  <h1> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h1>
 </ul>
