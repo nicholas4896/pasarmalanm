@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903084757) do
+ActiveRecord::Schema.define(version: 20160905063726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160903084757) do
     t.datetime "paid_at"
     t.string   "bill_id"
     t.string   "bill_url"
+    t.decimal  "price"
   end
 
   create_table "users", force: :cascade do |t|
