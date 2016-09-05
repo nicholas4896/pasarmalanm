@@ -12,9 +12,15 @@
              <%= image_tag ticket.image, class: "ticket-image"%>
              <hr>
              <%= ticket.body %>
+             <%= number_to_currency(ticket.price, :unit => 'RM') %>
+             <hr>
+             <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), method: :post, remote: true %>
+             <%= link_to 'Show', item_path(ticket) %>
          </div>
        <% end %>
       </section>
     <% end %>
+
+     <%= link_to 'Proceed to Cart', cart_path %>
   </div>
 </div>

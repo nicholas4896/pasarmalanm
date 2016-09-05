@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'omniauth#destroy', as: 'signout', via: [:get, :post]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get :cart, to: "carts#show"
+  post :add_item, to: "carts#add_item"
+  delete :remove_item, to: "carts#remove_item"
+  patch :update_item, to: "carts#update_item"
+
 end

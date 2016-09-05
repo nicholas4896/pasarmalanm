@@ -7,4 +7,8 @@ class ItemsController < ApplicationController
       @tickets = Item.all
     end
   end
+
+  def show
+    @ticket = Item.friendly.find(params[:id])
+  end
 end
