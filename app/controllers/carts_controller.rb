@@ -16,6 +16,8 @@ class CartsController < ApplicationController
       item.define_singleton_method(:quantity) { v }
       item.define_singleton_method(:total) { item_total }
       @items << item
+
+      @total_price += item.price.to_f
     end
   end
 
