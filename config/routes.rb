@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :items
+  resources :orders
 
   match 'auth/:provider/callback', to: 'omniauth#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
