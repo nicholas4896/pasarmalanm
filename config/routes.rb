@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :items
+  resources :orders
 
   match 'auth/:provider/callback', to: 'omniauth#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -17,4 +18,6 @@ Rails.application.routes.draw do
   delete :remove_item, to: "carts#remove_item"
   patch :update_item, to: "carts#update_item"
 
+  get :checkout, to: "checkout#show"
+  post :payment, to: "checkout#payment"
 end
