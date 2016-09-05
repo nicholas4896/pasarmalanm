@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include CanCan::ControllerAdditions
 
   include Pundit
 

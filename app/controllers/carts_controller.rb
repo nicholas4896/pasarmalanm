@@ -16,8 +16,6 @@ class CartsController < ApplicationController
       item.define_singleton_method(:quantity) { v }
       item.define_singleton_method(:total) { item_total }
       @items << item
-
-      @total_price += item.price.to_f
     end
   end
 
@@ -26,7 +24,6 @@ class CartsController < ApplicationController
       quantity = params[:quantity].to_i
       quantityOld = @cart[params[:id]].to_i
       @cart[params[:id]] = quantityOld + quantity
-      flash[:success] = "Added to cart!"
     else
       @cart[params[:id]] = params[:quantity]
     end

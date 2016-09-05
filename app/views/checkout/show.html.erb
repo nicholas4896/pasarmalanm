@@ -1,0 +1,19 @@
+<h1> Your Order </h1>
+
+<ul>
+  <% @items.each do |item| %>
+  <li>
+    Item Name: <%= link_to item.title, items_path %>
+    <br>
+    Item Price: <%= number_to_currency(item.price, :unit => 'RM') %>
+    <br>
+    Quantity: <%= item.quantity %>
+  </li>
+  <% end %>
+
+  <br>
+
+  <h1> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h1>
+
+  <%= link_to "Payment", payment_path, method: :post, class: 'btn btn-primary' %>
+</ul>

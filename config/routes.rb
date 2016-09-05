@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   delete :remove_item, to: "carts#remove_item"
   patch :update_item, to: "carts#update_item"
 
+  get :checkout, to: "checkout#show"
+  post :payment, to: "checkout#payment"
 end
