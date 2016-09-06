@@ -16,9 +16,9 @@
         <ul class="nav navbar-nav navbar-right">
           <%= link_to "About", about_path %>
           <%= link_to "Tickets", items_path %>
-          <%= link_to "Cart", cart_path %>
 
           <% if current_user %>
+            <%= link_to "Cart", cart_path %>
             <%= link_to current_user.username, edit_user_path(current_user) %>
             <%= link_to "Logout", session_path(current_user), method: :delete %>
           <% else %>
