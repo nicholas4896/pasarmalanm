@@ -42,7 +42,7 @@ class CheckoutController < ApplicationController
   private
   def create_order_from_items
     # binding.pry
-    @order = current_user.order.build(amount: @total_price)
+    @order = current_user.orders.build(amount: @total_price)
 
     @items.each do |item|
       @order.ordered_items.build(quantity: item.quantity, item_id: item.id)
