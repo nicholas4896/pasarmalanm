@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   patch :update_item, to: "carts#update_item"
 
   get :checkout, to: "checkout#show"
-  post :payment, to: "checkout#payment"
+  post :checkout, to: "checkout#payment"
 end

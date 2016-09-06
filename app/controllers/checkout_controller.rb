@@ -4,13 +4,12 @@ class CheckoutController < ApplicationController
 
   def show
     load_items_from_cart
+    @token = Braintree::ClientToken.generate
   end
 
   def payment
     load_items_from_cart
     create_order_from_items
-
-    @token = Braintree::ClientToken.generate
 
     result = Braintree::Transaction.sale(
       amount: @total_price,
@@ -19,7 +18,6 @@ class CheckoutController < ApplicationController
         submit_for_settlement: true
       }
     )
-
     if result.success?
       order = Order.create do
         transaction_id = result.transaction.id
@@ -28,7 +26,7 @@ class CheckoutController < ApplicationController
         status = "pending"
       end
 
-      @product.each { |product| order.ordered_items.create(product_id: product.id) }
+      @items.each { |item| order.ordered_items.create(item_id: item.id) }
       cookies.delete(:cart)
 
       flash[:success] = "We've received payment for your order. You'll receive your order soon"
@@ -43,7 +41,8 @@ class CheckoutController < ApplicationController
 
   private
   def create_order_from_items
-    @order = current_user.orders.build(amount: @total_price)
+    # binding.pry
+    @order = current_user.order.build(amount: @total_price)
 
     @items.each do |item|
       @order.ordered_items.build(quantity: item.quantity, item_id: item.id)
