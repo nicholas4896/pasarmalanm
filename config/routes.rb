@@ -7,6 +7,7 @@
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :items
+  resources :orders, only: [:new, :create, :show]
 
   match 'auth/:provider/callback', to: 'omniauth#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -17,10 +18,12 @@
   delete :remove_item, to: "carts#remove_item"
   patch :update_item, to: "carts#update_item"
 
+#for braintree checkout
   get :checkout, to: "checkout#show"
   post :checkout, to: "checkout#payment"
 
-  resources :orders, only: [:new, :create, :show]
+#for billpliz checkout
+
   scope '/webhooks', controller: :webhooks do
     post 'payment_callback', to: 'webhooks#payment_callback', as: :payment_callback
   end

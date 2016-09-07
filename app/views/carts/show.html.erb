@@ -24,6 +24,7 @@ Your Cart Is Currently empty
       <% end %>
 
       <br>
+      <br>
 
       <%= link_to "Remove", remove_item_path(id: item), class: 'btn btn-info', method: :delete %>
 
@@ -32,11 +33,16 @@ Your Cart Is Currently empty
   </li>
 
   <% end %>
+  <br>
 
   <% if @items.empty? %>
   <% else %>
   <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
   <% end %>
 
-  <%= link_to "Checkout", checkout_path(price: @total_price), method: :post, class: "btn btn-primary" %>
+  <%= link_to "Checkout with BillPliz", orders_path(price: @total_price), method: :post, class: "btn btn-primary" %>
+<br>
+<br>
+  <%= link_to "Checkout wtih BrainTree", checkout_path(price: @total_price), class: "btn btn-primary" %>
+
 </ul>
