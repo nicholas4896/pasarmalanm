@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   delete :remove_item, to: "carts#remove_item"
   patch :update_item, to: "carts#update_item"
 
+  resources :orders, only: [:new, :create, :show]
+  scope '/webhooks', controller: :webhooks do
+    post 'payment_callback', to: 'webhooks#payment_callback', as: :payment_callback
+  end
+
 end

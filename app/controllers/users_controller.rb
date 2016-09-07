@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       flash[:success] = "You've updated the user."
 
-      redirect_to edit_user_path(@user)
+      redirect_to root_path
     else
       flash[:danger] = @user.errors.full_messages
       redirect_to edit_user_path(@user)
