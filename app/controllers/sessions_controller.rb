@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: user_params[:email])
-    &.authenticate(user_params[:password])
+    user = User.find_by(email: session_params[:email])
+                &.authenticate(session_params[:password])
     if user
       session[:id] = user.id
       flash[:success] = "Welcome back #{current_user.username}"
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def user_params
+  def session_params
     params.require(:user).permit(:email, :password)
   end
 end
