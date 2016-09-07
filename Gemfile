@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+ruby "2.3.1"
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +41,8 @@ gem 'httparty'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'braintree'
+gem 'cancancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
