@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include CanCan::ControllerAdditions
 
   include Pundit
 
@@ -17,11 +18,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
 private
-
-  #  def current_user
-  #    return unless session[:id]
-  #    @current_user ||= User.find_by(id: session[:id])
-  #  end
 
    def authenticate!
     unless current_user

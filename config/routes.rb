@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'landing#index'
   get :about, to: 'static_pages#about'
@@ -17,9 +17,11 @@ Rails.application.routes.draw do
   delete :remove_item, to: "carts#remove_item"
   patch :update_item, to: "carts#update_item"
 
+  get :checkout, to: "checkout#show"
+  post :checkout, to: "checkout#payment"
+
   resources :orders, only: [:new, :create, :show]
   scope '/webhooks', controller: :webhooks do
     post 'payment_callback', to: 'webhooks#payment_callback', as: :payment_callback
   end
-
 end

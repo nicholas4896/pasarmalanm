@@ -1,7 +1,7 @@
 <h1> Your Cart </h1>
 
 <% if @items.empty? %>
-  Your Cart Is Currently empty
+Your Cart Is Currently empty
 <% else %>
 <% end %>
 
@@ -9,30 +9,34 @@
 
 <ul>
   <% @items.each do |item| %>
-    <li>
-      <%= link_to item.title, items_path %>
-      <br>
-      <%= number_to_currency(item.price, :unit => 'RM') %>
+  <li>
+    <%= link_to item.title, items_path %>
+    <br>
+    <%= number_to_currency(item.price, :unit => 'RM') %>
+    <br>
+
+    <%= form_tag update_item_path(id: item), method: :patch do %>
+
+    <div class = "">
+      <%= label_tag "Quantity:", nil, class: "" %>
+      <%= text_field_tag :quantity, item.quantity %>
+      <%= submit_tag 'Update', class: "button btn-primary" %>
+      <% end %>
+
       <br>
 
-      <%= form_tag update_item_path(id: item), method: :patch do %>
-        <div class = "">
-        <%= label_tag "Quantity:", nil, class: "" %>
-        <%= text_field_tag :quantity, item.quantity %>
-        <%= submit_tag 'Update', class: "button" %>
-      <% end %>
+      <%= link_to "Remove", remove_item_path(id: item), class: 'btn btn-info', method: :delete %>
+
       <br>
-      <%= link_to "Remove", remove_item_path(id: item), method: :delete %>
-      <br>
-    </li>
+    </div>
+  </li>
+
   <% end %>
 
   <% if @items.empty? %>
   <% else %>
-    <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
+  <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
   <% end %>
 
-  <%= link_to "Check Out", orders_path(price: @total_price), method: :post, class: "btn btn-primary" %>
-  <br>
-  <h1> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h1>
+  <%= link_to "Checkout", checkout_path(price: @total_price), method: :post, class: "btn btn-primary" %>
 </ul>
