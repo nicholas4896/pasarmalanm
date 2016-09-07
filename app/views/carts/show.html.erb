@@ -38,10 +38,5 @@ Your Cart Is Currently empty
   <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
   <% end %>
 
-  <br>
-
-  <h1> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h1>
-
-  <%= link_to "Checkout", checkout_path, class: 'btn btn-primary' %>
-
+  <%= link_to "Checkout", checkout_path(price: @total_price), method: :post, class: "btn btn-primary" %>
 </ul>

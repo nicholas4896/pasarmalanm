@@ -7,7 +7,6 @@
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :items
-  resources :orders
 
   match 'auth/:provider/callback', to: 'omniauth#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -20,4 +19,9 @@
 
   get :checkout, to: "checkout#show"
   post :checkout, to: "checkout#payment"
+
+  resources :orders, only: [:new, :create, :show]
+  scope '/webhooks', controller: :webhooks do
+    post 'payment_callback', to: 'webhooks#payment_callback', as: :payment_callback
+  end
 end

@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  before_action :authenticate!, only: [:show, :remove_item, :update_item]
+  before_action :warning, only: [:add_item]
   before_action :load_cart
   after_action :write_cart, only: [:add_item, :remove_item, :update_item]
 
@@ -52,5 +54,13 @@ class CartsController < ApplicationController
 
   def write_cart
     cookies[:cart] = JSON.generate(@cart)
+  end
+
+  def warning
+    if current_user
+    else
+      flash[:danger] = " You must be logged in to add items to cart!"
+      redirect_to new_session_path
+    end
   end
 end
