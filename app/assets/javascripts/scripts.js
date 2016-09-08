@@ -1,14 +1,15 @@
+
 function containerFunctions() {
   if(!$("#supersized-loader").length){
-    $("body").append('<div id="supersized-loader"></div><ul id="supersized"></ul>')
+    $(".background-khai").append('<div id="supersized-loader"></div><ul id="supersized"></ul>')
   }
-  
+
   $.supersized({
 
     // Functionality
-    slide_interval     : 4000,    // Length between transitions
+    slide_interval     : 10000,    // Length between transitions
     transition         : 1,    // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-    transition_speed   : 1000,    // Speed of transition
+    transition_speed   : 7000,    // Speed of transition
     performance        : 1,    // 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
 
     // Size & Position

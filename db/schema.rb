@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(version: 20160906082955) do
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.decimal  "amount"
-    t.string   "transaction_id"
     t.integer  "status",         default: 0
     t.datetime "paid_at"
     t.string   "bill_id"
     t.string   "bill_url"
     t.decimal  "price"
+    t.decimal  "amount"
+    t.string   "transaction_id"
   end
 
   create_table "users", force: :cascade do |t|
