@@ -18,6 +18,7 @@ class CheckoutController < ApplicationController
         submit_for_settlement: true
       }
     )
+
     if result.success?
       order = Order.create do
         transaction_id = result.transaction.id
@@ -25,7 +26,6 @@ class CheckoutController < ApplicationController
         user_id = current_user&.id
         status = "pending"
       end
-
       @items.each { |item| order.ordered_items.create(item_id: item.id) }
       cookies.delete(:cart)
 
