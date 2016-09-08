@@ -29,10 +29,6 @@
 
           </ul>
 
-          <%= form_tag items_path, :method => 'get', class: 'navbar-form navbar-left', id: "search-form" do %>
-          <%= text_field_tag :search, params[:search_string], placeholder: "Tickets" %>
-          <%= submit_tag "Search", :name => nil %>
-          <% end %>
       </div>
     </div>
   </nav>
