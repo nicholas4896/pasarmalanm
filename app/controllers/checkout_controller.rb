@@ -1,5 +1,4 @@
 class CheckoutController < ApplicationController
-  before_action :authenticate!, only: [:show, :remove_item, :update_item]
   before_action :warning, only: [:show]
   before_action :load_cart
 
@@ -82,5 +81,5 @@ class CheckoutController < ApplicationController
       redirect_to new_session_path
     end
   end
-  
+
 end
