@@ -15,7 +15,7 @@
              <%= number_to_currency(ticket.price, :unit => 'RM') %>
              <hr>
              <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), method: :post, remote: true %>
-             <%= link_to 'Show', item_path(ticket) %>
+             <%= link_to 'About', item_path(ticket) %>
          </div>
        <% end %>
       </section>

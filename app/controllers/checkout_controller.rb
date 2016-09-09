@@ -1,5 +1,6 @@
 class CheckoutController < ApplicationController
-
+  before_action :authenticate!, only: [:show, :remove_item, :update_item]
+  before_action :warning, only: [:show]
   before_action :load_cart
 
   def show
@@ -74,4 +75,12 @@ class CheckoutController < ApplicationController
     end
   end
 
+  def warning
+    if current_user
+    else
+      flash[:danger] = "You need to login before checkout"
+      redirect_to new_session_path
+    end
+  end
+  
 end
