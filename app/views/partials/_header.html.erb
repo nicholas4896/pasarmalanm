@@ -22,16 +22,13 @@
             <%= link_to current_user.username, edit_user_path(current_user) %>
             <%= link_to "Logout", session_path(current_user), method: :delete %>
           <% else %>
-            <%= link_to "Facebook Sign In", "/auth/facebook" %>
+            <!-- <%= link_to "Facebook Sign In", "/auth/facebook" %> -->
             <%= link_to "Register", new_user_path %>
             <%= link_to "Login", new_session_path %>
           <% end %>
 
           </ul>
-          <%= form_tag items_path, :method => 'get', id: "search-form" do %>
-          <%= text_field_tag :search, params[:search_string], placeholder: "Tickets" %>
-          <%= submit_tag "Search", :name => nil %>
-          <% end %>
+
       </div>
     </div>
   </nav>
