@@ -13,11 +13,9 @@ class User < ApplicationRecord
   end
 
   has_many :orders
-  # enum status: { user: 0, admin: 1 }
+
   enum role: ['user', 'admin']
   has_secure_password(validations: false)
-
-  # mount_uploader :image, ImageUploader
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

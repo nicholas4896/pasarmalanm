@@ -38,10 +38,9 @@ Your Cart Is Currently empty
   Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %>
   <hr>
 
-  <% if @items.empty? %>
-  <% else %>
-  <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
-  <% end %>
+<h2> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h2>
+
+<br>
 
   <%= link_to "Checkout with BillPliz", orders_path(price: @total_price), method: :post, class: "btn btn-primary" %>
   <br>

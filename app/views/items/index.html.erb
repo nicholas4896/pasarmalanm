@@ -14,12 +14,50 @@
              <%= ticket.body %>
              <%= number_to_currency(ticket.price, :unit => 'RM') %>
              <hr>
-             <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), method: :post, remote: true %>
-             <%= link_to 'Show', item_path(ticket) %>
-         </div>
+             <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), class: "btn btn-info", method: :post, remote: true %>
+             <div class="btn btn-success" data-toggle="modal" data-target="#modal-<%=ticket.id%>">Show</div>
+           </div>
+           <div class="modal fade" id="modal-<%=ticket.id%>">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dimiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                   <h3 class="modal-title"> Ticket Details </h3>
+                   <div class="modal-body">
+                     <p>
+                       <strong> Ticket name: </strong>
+                       <%= ticket.title %>
+                     </p>
+
+                     <p>
+                       <strong> Description: </strong>
+                       <%= ticket.body %>
+                     </p>
+
+                     <p>
+                       <strong> Image: </strong>
+                       <%= image_tag ticket.image, class: "ticket-image"%>
+                     </p>
+
+                     <p>
+                       <strong> Price: </strong>
+                       <%= ticket.price %>
+                     </p>
+                   </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
        <% end %>
       </section>
     <% end %>
      <%= link_to 'Proceed to Cart', cart_path, class: "btn btn-default button3 btn-lg" %>
   </div>
+
+
 </div>

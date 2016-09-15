@@ -1,5 +1,5 @@
 class CheckoutController < ApplicationController
-
+  before_action :warning, only: [:show]
   before_action :load_cart
 
   def show
@@ -18,6 +18,7 @@ class CheckoutController < ApplicationController
         submit_for_settlement: true
       }
     )
+
     if result.success?
       order = Order.create do
         transaction_id = result.transaction.id
@@ -25,7 +26,6 @@ class CheckoutController < ApplicationController
         user_id = current_user&.id
         status = "pending"
       end
-
       @items.each { |item| order.ordered_items.create(item_id: item.id) }
       cookies.delete(:cart)
 
@@ -71,6 +71,14 @@ class CheckoutController < ApplicationController
       item.define_singleton_method(:quantity) { v }
       item.define_singleton_method(:total) { item_total }
       @items << item
+    end
+  end
+
+  def warning
+    if current_user
+    else
+      flash[:danger] = "You need to login before checkout"
+      redirect_to new_session_path
     end
   end
 

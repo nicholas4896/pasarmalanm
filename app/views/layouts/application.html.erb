@@ -13,10 +13,16 @@
   </head>
 
   <body>
+
     <div id="header">
       <%= render partial: 'partials/header' %>
     </div>
     <%= render partial: "partials/flash_messages" %>
+
     <%= yield %>
+
   </body>
+  <div id="footer">
+    <%= render partial: "partials/footer" %>
+  </div>
 </html>
