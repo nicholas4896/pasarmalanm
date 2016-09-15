@@ -5,7 +5,8 @@ body {
 }
 
 .sessions,
-.users {
+.users,
+.tickets {
   .page-container {
     margin: 120px auto 0 auto;
   }
@@ -235,4 +236,14 @@ body {
   .connect a.twitter { background: url(../img/twitter.png) center center no-repeat; }
 
   .connect a:hover { background-position: center bottom; }
+}
+
+.button3 {
+  background-color: green;
+  color: #fff;
+  border: 0;
+}
+
+.button3:hover {
+  color: red;
 }

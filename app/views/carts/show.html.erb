@@ -1,3 +1,4 @@
+
 <h1> Your Cart </h1>
 
 <% if @items.empty? %>
@@ -34,6 +35,8 @@ Your Cart Is Currently empty
 
   <% end %>
   <br>
+  Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %>
+  <hr>
 
   <% if @items.empty? %>
   <% else %>
@@ -41,8 +44,8 @@ Your Cart Is Currently empty
   <% end %>
 
   <%= link_to "Checkout with BillPliz", orders_path(price: @total_price), method: :post, class: "btn btn-primary" %>
-<br>
-<br>
+  <br>
+  <br>
   <%= link_to "Checkout wtih BrainTree", checkout_path(price: @total_price), class: "btn btn-primary" %>
 
 </ul>
