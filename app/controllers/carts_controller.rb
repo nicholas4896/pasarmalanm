@@ -26,8 +26,12 @@ class CartsController < ApplicationController
       quantity = params[:quantity].to_i
       quantityOld = @cart[params[:id]].to_i
       @cart[params[:id]] = quantityOld + quantity
+      redirect_to items_path
+      flash[:success] = "You've added a ticket"
     else
       @cart[params[:id]] = params[:quantity]
+      redirect_to items_path
+      flash[:danger] = "error please try again"
     end
   end
 
