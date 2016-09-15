@@ -1,100 +1,116 @@
-.background {
-   background-image: asset-url("club.jpg");
-   height: calc(100vh - 52px);
-   width: 100%;
-   background-position: 50% 50%;
-   background-repeat: no-repeat;
-   background-size: cover;
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
+.landing{
+  .background {
+     background-image: asset-url("club.jpg");
+     height: calc(100vh - 52px);
+     width: 100%;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
 
- .title-container {
-   display: flex;
-   flex-wrap: wrap;
-   max-width: 1200px;
-   justify-content: center;
-   margin: auto;
- }
+   .title-container {
+     display: flex;
+     flex-wrap: wrap;
+     max-width: 1200px;
+     justify-content: center;
+     margin: auto;
+   }
 
-.title {
-  font-size: 100px;
-  color: #FFC300;
-  font-family: fantasy;
-  text-shadow: 8px 8px 8px #000000;
+  .title {
+    font-size: 100px;
+    color: #FFC300;
+    font-family: pattaya;
+    text-shadow: 8px 8px 8px #000000;
 
-}
+  }
 
-.short-underline {
-  width: auto;
-}
+  .short-underline {
+    width: auto;
+  }
 
-.subtitle {
-  font-size: 50px;
-  color: gold;
-  font-family: fantasy;
-  text-shadow: 2px 2px 2px #000000;
-}
+  .subtitle {
+    font-size: 50px;
+    color: gold;
+    font-family: fantasy;
+    text-shadow: 2px 2px 2px #000000;
+  }
 
-.features-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 30px;
-  background-color: black;
-}
+  .features-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 30px;
+    background-color: black;
+  }
 
-.features {
-  margin: 20px;
-  flex: 0 0 200px;
-  font-size: 30px;
-  font-family: fantasy;
-  color: white;
-}
+  .features {
+    margin: 20px;
+    flex: 0 0 200px;
+    font-size: 30px;
+    color: white;
+  }
 
-.photo-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 30px;
-}
+  .photo-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 30px;
+  }
 
-.photo {
-  margin: 20px;
-  flex: 0 0 200px;
-  font-size: 30px;
-  font-family: fantasy;
-  color: black;
-}
+  .photo {
+    margin: 20px;
+    flex: 0 0 200px;
+    font-size: 30px;
+    font-family: pattaya;
+    color: black;
+  }
 
-.app-container {
-  display: flex;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 10px;
-  background-color: white;
-}
+  .app-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 10px;
+    background-color: white;
+  }
 
-.app {
-  margin: 20px;
-  flex: 0 0 100px;
-  font-size: 20px;
-  font-family: fantasy;
-  color: black;
-}
+  .app {
+    margin: 20px;
+    flex: 0 0 100px;
+    font-size: 20px;
+    font-family: 'Pattaya';
+    color: black;
+  }
 
-.img-settings {
-  margin: 0 auto;
-  width: 100%;
-  // height: 750px;
+  .img-settings {
+    margin: 0 auto;
+    width: 100%;
+    // height: 750px;
 
-}
+  }
 
-.carousel-inner {
-  max-height: 750px;
+  .carousel-inner {
+    max-height: 750px;
+  }
+
+  p {
+    margin: 0;
+    color:black;
+  }
+
+  h2 {
+    color:black;
+    font-family: pattaya;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
 }
