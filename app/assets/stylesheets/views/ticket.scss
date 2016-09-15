@@ -1,6 +1,6 @@
 .tickets {
   .ticketbackground {
-    background-image: asset-url("backgroundtickets.jpg");
+    background-image: asset-url("purple.jpg");
     background-size: contain;
     height: calc(100vh - 62px);
   }
@@ -23,8 +23,17 @@
   }
 
   .ticket-image {
-    width: 50%;
-    height: 100px;
+    width: 150px;
+    height: 150px;
    }
+
+  h1 {
+    color:white;
+  }
+
+  .titlefont{
+    font-family: pattaya;
+    font-size: 20px;
+  }
 
 }

@@ -31,7 +31,7 @@ class CartsController < ApplicationController
     else
       @cart[params[:id]] = params[:quantity]
       redirect_to items_path
-      flash[:danger] = "error please try again"
+      flash[:success]= "You've added a ticket"
     end
   end
 
