@@ -17,8 +17,11 @@
         <%= number_to_currency(ticket.price, :unit => 'RM') %>
         <hr>
         <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), class: "btn btn-info", method: :post, remote: true %>
-        <div class="btn btn-success" data-toggle="modal" data-target="#modal-<%=ticket.id%>">Show</div>
+        <div class="btn btn-success" data-toggle="modal" data-target="#modal-<%=ticket.id%>">
+          Show
+        </div>
       </div>
+
       <div class="modal fade" id="modal-<%=ticket.id%>">
         <div class="modal-dialog">
           <div class="modal-content">
