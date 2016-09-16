@@ -11,7 +11,7 @@ class ApplicationPolicy
     end
 
     def dashboard?
-      user.admin?
+      user.present? && user_has_power?
     end
 
     def rails_admin?
@@ -48,5 +48,11 @@ class ApplicationPolicy
 
     def show_in_app?
       dashboard?
+    end
+
+    private
+
+    def user_has_power?
+      user.admin?
     end
   end
