@@ -32,10 +32,11 @@
   }
 
   .subtitle {
-    font-size: 50px;
+    font-size: 100px;
     color: gold;
     font-family: fantasy;
     text-shadow: 2px 2px 2px #000000;
+
   }
 
   .features-container {
@@ -49,10 +50,11 @@
   }
 
   .features {
-    margin: 20px;
+    // margin: 20px;
     flex: 0 0 200px;
     font-size: 30px;
     color: white;
+    // background-image: asset-url(".jpg");
   }
 
   .photo-container {
@@ -72,17 +74,23 @@
     color: black;
   }
 
-  .app-container {
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 10px;
-    background-color: white;
-  }
+
+.app-title {
+  color: black;
+  font-family: 'Pattaya';
+}
+
+.app-features {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: center;
+}
 
   .app {
-    margin: 20px;
-    flex: 0 0 100px;
+    flex: 0 0 280px;
+    margin: 20px 10px;
     font-size: 20px;
     font-family: 'Pattaya';
     color: black;
@@ -91,12 +99,12 @@
   .img-settings {
     margin: 0 auto;
     width: 100%;
-    // height: 750px;
+    height: 350px;
 
   }
 
   .carousel-inner {
-    max-height: 750px;
+    max-height: 600px;
   }
 
   p {

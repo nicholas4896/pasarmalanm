@@ -10,18 +10,21 @@
           <button name="commit" value="Login" data-disabled-with="login">
             Sign Me In
           </button>
+          <% end %>
         </div>
+
         <div class="connect">
           <p>
             or connect with:
           </p>
 
-          <%= link_to "/auth/facebook" do %>
-          <%= fa_icon 'facebook-official 5x' %>
-          <% end %>
         </div>
-        <% end %>
+        <!-- <a href="https://facebook.com">Facebook</a> -->
+
       </div>
     </div>
   </div>
 </div>
+<%= link_to "/auth/facebook" do %>
+<%= fa_icon 'facebook-official 5x' %>
+<% end %>
