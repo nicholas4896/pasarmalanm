@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
-  before_action :authenticate!, only: [:show, :remove_item, :update_item]
-  before_action :warning, only: [:add_item]
+  # before_action :authenticate!, only: [:show, :remove_item, :update_item]
+  # before_action :warning, only: [:add_item]
   before_action :load_cart
   after_action :write_cart, only: [:add_item, :remove_item, :update_item]
 
@@ -31,7 +31,7 @@ class CartsController < ApplicationController
     else
       @cart[params[:id]] = params[:quantity]
       redirect_to items_path
-      flash[:success]= "You've added a ticket"
+      flash[:danger]= "Please try again"
     end
   end
 
