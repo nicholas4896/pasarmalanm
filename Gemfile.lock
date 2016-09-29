@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/mshibuya/remotipart.git
-  revision: 88d9a7d55bde66acb6cf3a3c6036a5a1fc991d5e
+  revision: 7e244e78e148430b7720e6cf8f86263d6a1dfddf
   specs:
-    remotipart (1.2.1)
+    remotipart (1.3.0)
 
 GIT
   remote: git://github.com/norman/friendly_id.git
@@ -51,8 +51,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    arel (7.1.1)
-    autoprefixer-rails (6.4.0.3)
+    arel (7.1.2)
+    autoprefixer-rails (6.4.1.1)
       execjs
     bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
@@ -234,7 +234,7 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.1.1)
+    sprockets-rails (3.2.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
